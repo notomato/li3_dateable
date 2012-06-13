@@ -8,9 +8,4 @@
 
 use lithium\core\Libraries;
 
-if (Libraries::find('li3_behaviors') == null) {
-	Libraries::add('li3_behaviors');
-}
-
-
 ?>
