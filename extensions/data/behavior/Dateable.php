@@ -107,6 +107,9 @@ class Dateable extends \lithium\core\StaticObject {
 			$index = array('name' => 'li3_dateable') + $options['include'] + $updated + $created;
 			$collection = $meta['source'];
 			unset($options['include']);
+            if ($database->connection === null) {
+                $database->connect();
+            }
 			$database->connection->{$collection}->ensureIndex($index, $options);
 		}
 	}
